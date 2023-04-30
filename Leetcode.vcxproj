@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Leetcode01.c" />
+    <ClCompile Include="Leetcode03.c" />
     <ClCompile Include="Leetcode09.c" />
     <ClCompile Include="Leetcode13.c" />
   </ItemGroup>

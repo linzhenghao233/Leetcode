@@ -144,6 +144,7 @@
     <ClCompile Include="Leetcode04.c" />
     <ClCompile Include="Leetcode09.c" />
     <ClCompile Include="Leetcode13.c" />
+    <ClCompile Include="Leetcode14.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

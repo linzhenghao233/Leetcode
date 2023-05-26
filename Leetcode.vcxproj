@@ -147,8 +147,10 @@
     <ClCompile Include="Leetcode08.c" />
     <ClCompile Include="Leetcode09.c" />
     <ClCompile Include="Leetcode11.c" />
+    <ClCompile Include="Leetcode1137.c" />
     <ClCompile Include="Leetcode13.c" />
     <ClCompile Include="Leetcode14.c" />
+    <ClCompile Include="Leetcode509.c" />
     <ClCompile Include="Leetcode70.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

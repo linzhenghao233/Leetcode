@@ -1,16 +1,16 @@
 int minCostClimbingStairs(int* cost, int costSize) {
-    int step = costSize;
-    int money = 0;
+    int* money;
+    money = (int*)malloc((costSize + 1) * sizeof(int));
+    money[0] = cost[0];
+    money[1] = cost[1];
 
-    while (step - 2 >= 0) {
-        if (cost[step - 2] <= cost[step - 1]) {
-            money += cost[step - 2];
-            step -= 2;
+    for (int i = 2; i <= costSize; i++) {
+        if (money[i - 1] + cost[i - 1] <= money[i - 2] + cost[i - 2]) {
+            money[i] = money[i - 1] + cost[i - 1];
         }
         else {
-            money += cost[step - 1];
-            step--;
+            money[i] = money[i - 2] + cost[i - 2];
         }
     }
-    return money;
+    return money[costSize];
 }

@@ -1,19 +1,30 @@
 int deleteAndEarn(int* nums, int numsSize) {
-    int* arr, max = 0;
-    arr = (int*)malloc(numsSize * sizeof(int));
+    int* temp, * count, max_index = 0, max = 0;
+    temp = (int*)malloc(10002 * sizeof(int));
+    count = (int*)malloc(10002 * sizeof(int));
+
+    if (numsSize == 1)
+        return nums[0];
+    if (numsSize == 2) {
+        if (nums[0] == nums[1])
+            return 2 * nums[0];
+        else
+            return nums[0] > nums[1] ? nums[0] : nums[1];
+    }
 
     for (int i = 0; i < numsSize; i++) {
-        arr[i] = nums[i];
-        for (int j = 0; j < numsSize; j++) {
-            if (nums[j] == nums[i] - 1 || nums[j] == nums[i] + 1 || i == j)
-                continue;
-            else
-                arr[i] += nums[j];
-        }
-        if (arr[i] > max)
-            max = arr[i];
+        if (nums[i] > max_index)
+            max_index = nums[i];
+        temp[nums[i]] += nums[i];
     }
-    free(arr);
+
+    count[0] = temp[0];
+    count[1] = temp[1];
+    for (int i = 2; i - 1 < max_index; i++) {
+        count[i] = count[i - 2] + temp[i];
+        if (count[i] > max)
+            max = count[i];
+    }
 
     return max;
 }

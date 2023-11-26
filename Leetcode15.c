@@ -4,28 +4,31 @@
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes) {
-    int left = 0, right = 1, row = 0;
-    int** arr = (int**)malloc(3000 * sizeof(int*));
+    int left = 0, right = numsSize - 1, row = 0, target;
+    int** arr = (int**)malloc(1000 * sizeof(int*));
 
-    for (int i = 2; i < numsSize; i++) {
-        for (int j = right + 1; j < numsSize; j++) {
-            if (nums[left] + nums[right] + nums[j] == 0) {
+    while (left < right) {
+        target = -(nums[left] + nums[right]);
+        int i = left + 1;
+        while (i < right) {
+            if (nums[i] == target) {
                 arr[row] = (int*)malloc(3 * sizeof(int));
                 arr[row][0] = nums[left];
-                arr[row][1] = nums[right];
-                arr[row][2] = nums[j];
+                arr[row][1] = nums[i];
+                arr[row][2] = nums[right];
                 row++;
-                returnSize = row + 1;
-                returnColumnSizes = 3;
-                left++;
-                right++;
                 break;
             }
-            if (j + 1 == numsSize) {
-                left++;
-                right++;
-            }
+            i++;
         }
+        left++;
+        right--;
     }
+    *returnSize = row;
+    *returnColumnSizes = (int*)malloc(row * sizeof(int));
+    for (int i = 0; i < row; i++) {
+        (*returnColumnSizes)[i] = 3;
+    }
+
     return arr;
 }

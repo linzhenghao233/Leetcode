@@ -1,29 +1,44 @@
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes) {
-    int left = 0, right = numsSize - 1, row = 0, target;
+    int row = 0;
     int** arr = (int**)malloc(1000 * sizeof(int*));
 
-    while (left < right) {
-        target = -(nums[left] + nums[right]);
-        int i = left + 1;
-        while (i < right) {
-            if (nums[i] == target) {
+    // Sort the array first to apply the two-pointer approach
+    qsort(nums, numsSize, sizeof(int), compareFunc);
+
+    for (int left = 0; left < numsSize - 2; left++) {
+        if (left > 0 && nums[left] == nums[left - 1])
+            continue;
+
+        int mid = left + 1;
+        int right = numsSize - 1;
+
+        while (mid < right) {
+            int sum = nums[left] + nums[mid] + nums[right];
+            if (sum == 0) {
                 arr[row] = (int*)malloc(3 * sizeof(int));
                 arr[row][0] = nums[left];
-                arr[row][1] = nums[i];
+                arr[row][1] = nums[mid];
                 arr[row][2] = nums[right];
                 row++;
-                break;
+
+                // Skip duplicates
+                while (mid < right && nums[mid] == nums[mid + 1])
+                    mid++;
+                while (mid < right && nums[right] == nums[right - 1])
+                    right--;
+
+                mid++;
+                right--;
             }
-            i++;
+            else if (sum < 0) {
+                mid++;
+            }
+            else {
+                right--;
+            }
         }
-        left++;
-        right--;
     }
+
     *returnSize = row;
     *returnColumnSizes = (int*)malloc(row * sizeof(int));
     for (int i = 0; i < row; i++) {

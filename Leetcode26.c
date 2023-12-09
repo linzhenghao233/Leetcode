@@ -1,23 +1,19 @@
 int removeDuplicates(int* nums, int numsSize) {
-    int blank, search, temp, count;
-    search = temp = 1;
-    count = 0;
+    int blank, search;
+    search = 1;
+    blank = 0;
 
     if (numsSize == 1)
         return numsSize;
 
     while (search < numsSize) {
-        while (nums[search] == nums[search - 1]) {
-            if (temp == 1) {
-                blank = search;
-                temp = 0;
-            }
-            search++;
-            count++;
-        }
-        if (search < numsSize)
+        if (nums[search] > nums[blank]) {
+            blank++;
             nums[blank] = nums[search];
-        temp = 1;
+        }
+        search++;
+        while (search < numsSize && nums[search] == nums[search - 1])
+            search++;
     }
-    return numsSize - count;
+    return blank + 1;
 }

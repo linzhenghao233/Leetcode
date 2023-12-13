@@ -1,23 +1,40 @@
 void nextPermutation(int* nums, int numsSize) {
-    int left, right, temp, end;
-    right = numsSize - 1;
-    temp = -1;
+    int left, right, temp, end, min, move;
+    left = numsSize - 2;
+    min = 101;
     end = 0;
 
-    while (right < numsSize && right > 0) {
-        left = right - 1;
-        while (left >= 0) {
-            temp = nums[right];
-            nums[right] = nums[left];
-            nums[left] = temp;
-            if (nums[left] > nums[right]) {
-                end = 1;
-                break;
+    while (left >= 0) {
+        right = left + 1;
+        while (right < numsSize) {
+            if (nums[right] > nums[left] && nums[right] < min) {
+                min = nums[right];
+                move = right;
             }
-            left--;
+            right++;
         }
-        if (end == 1)
+        if (min != 101) {
+            temp = nums[left];
+            nums[left] = nums[move];
+            nums[move] = temp;
+            left++;
+            right = numsSize - 1;
+            while (left < right) {
+                temp = nums[left];
+                nums[left++] = nums[right];
+                nums[right--] = temp;
+            }
             break;
-        right--;
+        }
+        left--;
+    }
+    if (min == 101) {
+        left = 0;
+        right = numsSize - 1;
+        while (left < right) {
+            temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+        }
     }
 }

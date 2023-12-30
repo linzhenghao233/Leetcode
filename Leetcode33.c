@@ -1,20 +1,24 @@
 int search(int* nums, int numsSize, int target) {
-    int notfound = -1;
     int left, middle, right;
     left = 0, right = numsSize - 1;
 
     while (left <= right) {
-        middle = (left + right) / 2;
+        middle = left + (right - left) / 2;
         if (nums[middle] == target)
             return middle;
-        if (nums[middle] > target && target < nums[right])
-            left = middle;
-        else if (nums[middle] > target && target > nums[left])
-            right = middle;
-        else if (nums[middle] < target && target > nums[left])
-            right = middle;
-        else if (nums[middle] < target && target < nums[right])
-            left = middle;
+
+        if (nums[left] <= nums[middle]) {
+            if (nums[left] <= target && target <= nums[middle])
+                right = middle - 1;
+            else
+                left = middle + 1;
+        }
+        else {
+            if (nums[middle] <= target && target <= nums[right])
+                left = middle + 1;
+            else
+                right = middle - 1;
+        }
     }
-    return notfound;
-}//思路是一坨
+    return -1;
+}

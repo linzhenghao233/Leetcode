@@ -29,6 +29,35 @@ char* addBinary(char* a, char* b) {
 }
 
 int BinToDec(char* Bin, int len) {
+    char* addBinary(char* a, char* b) {
+        int a_len = strlen(a);
+        int b_len = strlen(b);
+        int max_len = a_len >= b_len ? a_len : b_len;
+        char* result = (char*)malloc((max_len + 2) * sizeof(char));
+        result[max_len + 1] = '\0';
+        result[0] = '0';
+        int add = 0;
+
+        while (a_len > 0 || b_len > 0) {
+            int sum = add;
+            if (a_len > 0)
+                sum += a[--a_len] - '0';
+            if (b_len > 0)
+                sum += b[--b_len] - '0';
+            result[max_len--] = sum % 2 + '0';
+            add = sum / 2;
+        }
+        if (add > 0)
+            result[0] = '0' + add;
+        if (result[0] == '0') {
+            char* new_result = (char*)malloc(strlen(result) * sizeof(char));
+            strcpy(new_result, result + 1);
+            free(result);
+            return new_result;
+        }
+
+        return result;
+    }
     unsigned long long local = 1;
     int total = 0;
     for (int i = len - 1; i >= 0; i--) {
@@ -37,3 +66,33 @@ int BinToDec(char* Bin, int len) {
     }
     return total;
 }//错的，转数字会溢出
+
+char* addBinary(char* a, char* b) {
+    int a_len = strlen(a);
+    int b_len = strlen(b);
+    int max_len = a_len >= b_len ? a_len : b_len;
+    char* result = (char*)malloc((max_len + 2) * sizeof(char));
+    result[max_len + 1] = '\0';
+    result[0] = '0';
+    int add = 0;
+
+    while (a_len > 0 || b_len > 0) {
+        int sum = add;
+        if (a_len > 0)
+            sum += a[--a_len] - '0';
+        if (b_len > 0)
+            sum += b[--b_len] - '0';
+        result[max_len--] = sum % 2 + '0';
+        add = sum / 2;
+    }
+    if (add > 0)
+        result[0] = '0' + add;
+    if (result[0] == '0') {
+        char* new_result = (char*)malloc(strlen(result) * sizeof(char));
+        strcpy(new_result, result + 1);
+        free(result);
+        return new_result;
+    }
+
+    return result;
+}

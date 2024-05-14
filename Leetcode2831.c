@@ -1,26 +1,23 @@
 int longestEqualSubarray(int* nums, int numsSize, int k) {
-    int* hash = (int*)calloc(numsSize, sizeof(int));
+    int* hash = (int*)calloc(numsSize + 1, sizeof(int));
     int left, right;
     int result;
-    int count;
-    int max_num;
-    left = right = result = count = max_num = 0;
+    int count = k;
+    left = right = result = 0;
 
     while (right < numsSize) {
-        hash[nums[right] - 1]++;
-        if (hash[nums[right] - 1] > result) {
-            result = hash[nums[right] - 1];
-            max_num = nums[right];
-        }
-        count++;
-        while (count - result > k) {
-            if (nums[left] == max_num)
-                result--;
-            hash[nums[left] - 1]--;
+        hash[nums[right]]++;
+
+        if (result < hash[nums[right]])
+            result = hash[nums[right]];
+        else
             count--;
+
+        if (count < 0) {
+            hash[nums[left]]--;
             left++;
+            count++;
         }
-        result = fmax(right - left + 1 - result, result);
         right++;
     }
     free(hash);

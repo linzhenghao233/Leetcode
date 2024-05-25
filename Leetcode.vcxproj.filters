@@ -504,5 +504,14 @@
     <ClCompile Include="Leetcode338.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Leetcode1356.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Leetcode461.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Leetcode2220.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

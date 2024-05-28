@@ -230,6 +230,7 @@
     <ClCompile Include="Leetcode238.c" />
     <ClCompile Include="Leetcode2401.c" />
     <ClCompile Include="Leetcode2413.c" />
+    <ClCompile Include="Leetcode2419.c" />
     <ClCompile Include="Leetcode242.c" />
     <ClCompile Include="Leetcode2461.c" />
     <ClCompile Include="Leetcode2469.c" />
@@ -247,6 +248,7 @@
     <ClCompile Include="Leetcode283.c" />
     <ClCompile Include="Leetcode2831.c" />
     <ClCompile Include="Leetcode2841.c" />
+    <ClCompile Include="Leetcode2871.c" />
     <ClCompile Include="Leetcode2917.c" />
     <ClCompile Include="Leetcode292.c" />
     <ClCompile Include="Leetcode2953.c" />

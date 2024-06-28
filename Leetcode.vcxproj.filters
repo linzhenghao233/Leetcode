@@ -633,5 +633,8 @@
     <ClCompile Include="Leetcode383.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Leetcode557.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

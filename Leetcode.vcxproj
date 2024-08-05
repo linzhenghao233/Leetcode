@@ -395,6 +395,7 @@
     <ClCompile Include="Leetcode94.c" />
     <ClCompile Include="Leetcode976.c" />
     <ClCompile Include="Leetcode_LCP_40.c" />
+    <ClCompile Include="Leetcode_LCR_189.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

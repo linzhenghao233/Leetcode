@@ -232,6 +232,7 @@
     <ClCompile Include="Leetcode2011.c" />
     <ClCompile Include="Leetcode202.c" />
     <ClCompile Include="Leetcode2024.c" />
+    <ClCompile Include="Leetcode203.c" />
     <ClCompile Include="Leetcode205.c" />
     <ClCompile Include="Leetcode206.c" />
     <ClCompile Include="Leetcode209.c" />
@@ -257,6 +258,7 @@
     <ClCompile Include="Leetcode238.c" />
     <ClCompile Include="Leetcode2389.c" />
     <ClCompile Include="Leetcode2396.c" />
+    <ClCompile Include="Leetcode24.c" />
     <ClCompile Include="Leetcode2401.c" />
     <ClCompile Include="Leetcode2411.c" />
     <ClCompile Include="Leetcode2413.c" />
@@ -407,6 +409,7 @@
     <ClCompile Include="Leetcode94.c" />
     <ClCompile Include="Leetcode976.c" />
     <ClCompile Include="Leetcode_LCP_40.c" />
+    <ClCompile Include="Leetcode_LCR_024.c" />
     <ClCompile Include="Leetcode_LCR_189.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

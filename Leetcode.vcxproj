@@ -420,6 +420,7 @@
     <ClCompile Include="Leetcode_LCP_40.c" />
     <ClCompile Include="Leetcode_LCP_67.c" />
     <ClCompile Include="Leetcode_LCR_024.c" />
+    <ClCompile Include="Leetcode_LCR_182.c" />
     <ClCompile Include="Leetcode_LCR_189.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

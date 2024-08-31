@@ -333,6 +333,7 @@
     <ClCompile Include="Leetcode3106.c" />
     <ClCompile Include="Leetcode3110.c" />
     <ClCompile Include="Leetcode3115.c" />
+    <ClCompile Include="Leetcode3127.c" />
     <ClCompile Include="Leetcode3128.c" />
     <ClCompile Include="Leetcode3131.c" />
     <ClCompile Include="Leetcode3133.c" />

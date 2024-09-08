@@ -903,5 +903,23 @@
     <ClCompile Include="Leetcode1365.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Leetcode977.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PTA_7_1.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PTA_7_3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PTA_7_4.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PTA_7_5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PTA_7_7.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

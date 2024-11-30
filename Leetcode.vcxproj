@@ -272,6 +272,7 @@
     <ClCompile Include="Leetcode215.c" />
     <ClCompile Include="Leetcode2156.c" />
     <ClCompile Include="Leetcode217.c" />
+    <ClCompile Include="Leetcode2180.c" />
     <ClCompile Include="Leetcode2181.c" />
     <ClCompile Include="Leetcode22.c" />
     <ClCompile Include="Leetcode221.c" />

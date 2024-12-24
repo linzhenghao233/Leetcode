@@ -542,6 +542,7 @@
     <ClCompile Include="Leetcode_LCP_40.c" />
     <ClCompile Include="Leetcode_LCP_67.c" />
     <ClCompile Include="Leetcode_LCR_024.c" />
+    <ClCompile Include="Leetcode_LCR_166.c" />
     <ClCompile Include="Leetcode_LCR_182.c" />
     <ClCompile Include="Leetcode_LCR_189.c" />
     <ClCompile Include="PTA_7_1.c" />

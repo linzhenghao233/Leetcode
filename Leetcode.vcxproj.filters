@@ -1461,5 +1461,8 @@
     <ClCompile Include="Leetcode2544.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Leetcode876.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

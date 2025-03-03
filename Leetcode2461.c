@@ -33,3 +33,32 @@ long long maximumSubarraySum(int* nums, int numsSize, int k) {
         }
     }
 }
+
+//做出来了25/3/3
+long long maximumSubarraySum(int* nums, int numsSize, int k) {
+    int count[100001] = { 0 };
+    long long result = 0;
+    long long temp = 0;
+    int left = 0;
+    int right = 0;
+
+    while (right < numsSize) {
+        count[nums[right]] += 1;
+        temp += nums[right];
+        while (count[nums[right]] > 1) {
+            count[nums[left]] -= 1;
+            temp -= nums[left];
+            left += 1;
+        }
+        if (right - left + 1 > k) {
+            count[nums[left]] -= 1;
+            temp -= nums[left];
+            left += 1;
+        }
+        if (right - left + 1 == k && temp > result)
+            result = temp;
+        right += 1;
+    }
+
+    return result;
+}

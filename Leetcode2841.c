@@ -27,3 +27,54 @@ long long maxSum(int* nums, int numsSize, int m, int k) {
     free(temp);
     return result;
 }
+
+
+//25/3/3อจนýมห
+long long maxSum(int* nums, int numsSize, int m, int k) {
+    long long result = 0;
+    long long cur = 0;
+    int count[20001][2] = { 0 };
+    int diff_cnt = 0;
+    int index = 0;
+
+    for (int i = 0; i < numsSize; i++) {
+        int flag = 0;
+        for (int j = 0; j < index; j++) {
+            if (count[j][0] == nums[i]) {
+                count[j][1]++;
+                flag = 1;
+                break;
+            }
+        }
+
+        if (!flag) {
+            count[index][0] = nums[i];
+            count[index][1] = 1;
+            index++;
+            diff_cnt++;
+        }
+        cur += nums[i];
+
+        if (i >= k) {
+            cur -= nums[i - k];
+            for (int j = 0; j < index; j++) {
+                if (count[j][0] == nums[i - k]) {
+                    count[j][1]--;
+                    if (count[j][1] == 0) {
+                        diff_cnt--;
+                        count[j][0] = count[index - 1][0];
+                        count[j][1] = count[index - 1][1];
+                        index--;
+                    }
+                    break;
+                }
+            }
+        }
+        if (i >= k - 1 && diff_cnt >= m) {
+            if (cur > result)
+                result = cur;
+        }
+    }
+
+    return result;
+}

@@ -649,6 +649,7 @@
     <ClCompile Include="Leetcode_LCR_127.c" />
     <ClCompile Include="Leetcode_LCR_136.c" />
     <ClCompile Include="Leetcode_LCR_140.c" />
+    <ClCompile Include="Leetcode_LCR_161.c" />
     <ClCompile Include="Leetcode_LCR_166.c" />
     <ClCompile Include="Leetcode_LCR_182.c" />
     <ClCompile Include="Leetcode_LCR_189.c" />
